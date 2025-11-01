@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+  padding: 0;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Safari */
+  -khtml-user-select: none;    /* Konqueror HTML */
+  -moz-user-select: none;      /* Old versions of Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;    
+  overscroll-behavior: none;
+}
+
+@font-face {
+  font-family: 'Campton';
+  src: url('CamptonBlack.otf') format('opentype');
+  
+  font-weight: 900; /* since it's 'Black', which means extra bold */
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Modern1';
+  src: url('Moderniz.otf') format('opentype');
+  
+  font-weight: 900; /* since it's 'Black', which means extra bold */
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Modern Luxury';
+  src: url('modern-luxury.regular.ttf') format('truetype');
+  
+  font-weight: 900; /* since it's 'Black', which means extra bold */
+  font-style: normal;
+}
+body {
+    background-color: white;
+    font-family: 'Modern1', sans-serif;
+   
+}
+.intro{
+
+    background-image: url('testbackdrop2.png');
+    background-size: cover;
+    background-position: center 0 ;
+    background-attachment: scroll;
+    color: white;
+    position: relative;
+    
+    
+
+  
+
+    box-shadow: black 0px 0px 10px;
+
+   
+    height: 90vh;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+}
+.scratch{
+
+    background-color: tan;
+    background-size: cover;
+    background-position: center;
+    margin: 33px;
+    
+ 
+    color: white;
+    position: relative;
+
+  
+
+    box-shadow: black 0px 0px 10px;
+
+   
+    height: 90vh;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;  
+}
+
+.top {
+    margin-top: -50px;
+    font-size: 10vh;
+    text-shadow: black 0px 0px 10px;
+    opacity: 0.9;
+}
+.top2 {
+   
+    font-size: 4vh;
+    margin-top: -5px;
+    text-shadow: black 0px 0px 10px;
+    opacity: 0.77;
+}
+
+
+.top3 {
+   
+    font-size: 10vh;
+    margin-top: 10px;
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+    
+    
+    
+    opacity: 99%;
+}
+
+.divbottom {
+    position: absolute; /* Pushes the child to the bottom */
+    bottom: 0px; /* Adjust this value to position it higher or lower */
+    width: 100%;
+    transform: translateY(-5px); /* Ensure it spans the full width */
+}
+
+.gifcover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyZ2t2em9iNm9tZDd5eXgxcWRtdDRqb2tyZ3Vtdjl6ZGd1Y3o2M3pmNiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/isqxY03RuhGxNbCPzY/200w.gif');
+    background-size: cover;
+    
+  width: 100vw;
+  height: 100%;
+  opacity: 153%;
+  
+
+}
+.gifcover2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('https://i.makeagif.com/media/11-24-2017/lw_2KO.gif');
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  width: 100%;
+  height: 100%;
+  opacity: 10%;
+  
+  filter: grayscale(100%);
+
+
+}
+
+.blackcover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0%;
+}
+
+.divider {
+    height: 0vh; /* Adjust the height as needed */
+    background-color: black; 
+    z-index: 100; /* Higher than the blackcover's implicit z-index */
+    position: relative; /* z-index only works on positioned elements */
+    
+    /* Optional: Add a background color */
+}

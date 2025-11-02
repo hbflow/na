@@ -8,8 +8,13 @@
   -ms-user-select: none;       /* Internet Explorer/Edge */
   user-select: none;    
   overscroll-behavior: none;
+     
+  font-size: clamp(12px, 2vw, 24px); 
+  
 }
-
+html, body {
+  overflow-x: hidden; /* Prevent horizontal overflow safely */
+}
 @font-face {
   font-family: 'Campton';
   src: url('CamptonBlack.otf') format('opentype');
@@ -31,6 +36,15 @@
   font-weight: 900; /* since it's 'Black', which means extra bold */
   font-style: normal;
 }
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-1000px);
+  }
+}
 body {
     background-color: white;
     font-family: 'Modern1', sans-serif;
@@ -49,7 +63,7 @@ body {
 
   
 
-    box-shadow: black 0px 0px 10px;
+    box-shadow: black 100px 10x 10px;
 
    
     height: 90vh;
@@ -60,12 +74,88 @@ body {
     align-items: center;
     justify-content: center;  
 }
+.twentyfour{
+
+  
+
+    background-image: url('hbflowof-min.jpg');
+    background-size: cover;
+    background-position: center 0 ;
+    background-attachment: scroll;
+    color: white;
+    position: relative;
+    border-bottom: white 2px solid; /* Adjust thickness as needed */
+    
+    
+
+  
+
+    box-shadow: black 100px 10x 10px;
+    
+
+   
+   
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;  
+}
+
+.twentyfour::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   background: linear-gradient(to bottom, tan 0px, rgba(0,0,0,0) 22%);
+
+    pointer-events: none; /* ensures it doesn’t block clicks */
+    z-index: 0; /* place above background but below text if needed */
+}
 .scratch{
+  
 
     background-color: tan;
+     z-index: 3;
     background-size: cover;
     background-position: center;
-    margin: 33px;
+    /* box-shadow: rgba(0, 0, 0, 0.858) 0px 0px 10px; */
+   border-top: 2px solid white; /* Adjust thickness as needed */
+
+   
+    
+ 
+    color: white;
+    
+    position: relative;
+
+  
+
+    
+
+   height: 480px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;  
+}
+.whitetoblacktransition{
+  
+
+   background: linear-gradient(to bottom, white, black);
+     z-index: 3;
+    background-size: cover;
+    background-position: center;
+    text-shadow: black 0px 0px 10px;
+    /* box-shadow: rgba(0, 0, 0, 0.858) 0px 0px 10px; */
+  
+
+   
     
  
     color: white;
@@ -73,10 +163,71 @@ body {
 
   
 
-    box-shadow: black 0px 0px 10px;
+    
+
+   height: 100px;
+      
+
+
+}
+
+
+.black{
+
+  /* background-image: url('upper.png'); */
+  
+
+    background-color: black;
+    
+     z-index: 3;
+    background-size: cover;
+    background-position: center;
+    text-shadow: black 0px 0px 10px;
+    /* box-shadow: rgba(0, 0, 0, 0.858) 0px 0px 10px; */
+  
 
    
-    height: 90vh;
+    
+ 
+    color: white;
+   
+    position: relative;
+
+  
+
+    
+
+   
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;  
+}
+
+.white{
+  
+
+    background-color: white;
+     z-index: 3;
+    background-size: cover;
+    background-position: center;
+    text-shadow: black 0px 0px 10px;
+    /* box-shadow: rgba(0, 0, 0, 0.858) 0px 0px 10px; */
+   border-top: 3px solid rgb(0, 0, 0); /* Adjust thickness as needed */
+
+   
+    
+ 
+    color: white;
+    position: relative;
+
+  
+
+    
+
+   
     text-align: center;
 
     display: flex;
@@ -87,13 +238,14 @@ body {
 
 .top {
     margin-top: -50px;
-    font-size: 10vh;
+    font-size: clamp(16px, 10vw, 100px);
+    
     text-shadow: black 0px 0px 10px;
-    opacity: 0.9;
+    opacity: 70%;
 }
 .top2 {
    
-    font-size: 4vh;
+     font-size: clamp(16px, 6vw, 30px);
     margin-top: -5px;
     text-shadow: black 0px 0px 10px;
     opacity: 0.77;
@@ -110,8 +262,53 @@ body {
     
     
     opacity: 99%;
+     z-index: 4; 
+}
+.top4{
+   
+    font-size: 10vh;
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+    
+    
+    
+    opacity: 99%;
+     z-index: 4; 
+}
+.top6{
+   
+    font-size: 40px;
+   
+    color: rgba(0, 0, 0, 0.636);
+    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+    
+    
+    
+    opacity: 99%;
+     z-index: 4; 
+}
+.top7{
+   
+    font-size: 30px;
+  
+    color: rgb(184, 140, 64);
+    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+    
+    
+    
+    opacity: 99%;
+     z-index: 4; 
 }
 
+.white p{
+    color: rgba(0, 0, 0, 0.59);
+    font-size: clamp(12px, 3vw, 24px);
+    
+    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+    opacity: 99%;
+     z-index: 4; 
+}
 .divbottom {
     position: absolute; /* Pushes the child to the bottom */
     bottom: 0px; /* Adjust this value to position it higher or lower */
@@ -128,6 +325,7 @@ body {
     
   width: 100vw;
   height: 100%;
+  
   opacity: 153%;
   
 
@@ -142,9 +340,10 @@ body {
   background-attachment: scroll;
   width: 100%;
   height: 100%;
-  opacity: 10%;
+  opacity: 7%;
+  filter: blur(3px);
   
-  filter: grayscale(100%);
+ 
 
 
 }
@@ -157,6 +356,7 @@ body {
   width: 100vw;
   height: 100vh;
   opacity: 0%;
+  
 }
 
 .divider {
@@ -167,3 +367,445 @@ body {
     
     /* Optional: Add a background color */
 }
+
+.scrollwheel {
+    
+    
+   
+    width: 100%;
+    height: 100%;
+     z-index: 1; 
+     display: flex;
+ 
+    animation: slide 10s linear infinite;
+   
+    
+    
+}
+
+
+
+.img-wrapper {
+  height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid white;
+  
+  border-radius: 8px;
+  margin: 3px;
+  box-shadow: rgba(0, 0, 0, 0.181) 0px 0px 5px;
+  
+}
+
+
+
+.img-wrapper2 {
+  width: 90%;           /* Control width instead of height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid white;
+  border-radius: 8px;
+
+  box-shadow: rgba(0, 0, 0, 0.703) 0px 2px 20px;
+}
+
+.img-wrapper2 img {
+  width: 100%;            /* Fill wrapper's width */
+  height: auto;           /* Keeps proportions */
+  display: block;
+  border-radius: 8px;
+}
+
+.img-wrapper7 {
+  width: 90%;           /* Control width instead of height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 8px;
+
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 20px;
+}
+
+.img-wrapper7 img {
+  width: 100%;            /* Fill wrapper's width */
+  height: auto;           /* Keeps proportions */
+  display: block;
+  border-radius: 8px;
+}
+
+
+.grid-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 12px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start; /* 👈 prevents overlapping when heights differ */
+}
+
+.img-wrapper9,
+.img-wrapper10 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 20px;
+  overflow: hidden; /* 👈 hides any overflow */
+  width: 100%;
+  height: auto; /* 👈 let height adjust naturally */
+}
+
+/* Image rules for all wrappers */
+.img-wrapper9 img,
+.img-wrapper10 img {
+  width: 100%;       /* fill container width */
+  height: auto;      /* maintain aspect ratio */
+  display: block;
+  object-fit: cover; /* optional: keeps clean scaling */
+}
+
+
+
+
+
+
+.img-wrapper3 {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 3px;
+    box-shadow: black 0px 2px 20px;
+
+    width: 90%;           /* responsive width */
+    max-width: 500px;     /* optional: prevents it from getting too wide */
+    height: auto;         /* lets height scale proportionally */
+}
+
+.img-wrapper3 img {
+    width: 100%;          /* fills wrapper width */
+    height: auto;         /* keeps proportions */
+    display: block;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.img-wrapper5 {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 3px;
+    box-shadow: rgba(0, 0, 0, 0.305) 0px 2px 20px;
+
+    width: 90%;           /* responsive width */
+    max-width: 500px;     /* prevents it from getting too wide */
+    height: auto;         /* lets wrapper grow naturally */
+}
+
+.img-wrapper5 img {
+    width: auto;           /* preserve aspect ratio */
+    max-width: 100%;       /* never exceeds wrapper width */
+    height: 80vh;          /* tall, relative to viewport */
+    max-height: 90vh;      /* never exceeds viewport height */
+    display: block;
+    border-radius: 2px;
+    object-fit: contain;   /* ensures GIF fits nicely */
+}
+
+.abovelink {
+    font-size: 14px;
+    margin-top: 10px;
+    color: rgba(0, 0, 0, 0.589);
+    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+    z-index: 4; 
+    position: relative;
+}
+.link a {
+    font-size: 10px;
+}
+
+
+
+.img-wrapper img {
+   height: 100%;              /* fill wrapper’s height */
+  width: auto;  /* keeps proportions */
+  display: block;
+  border-radius: 8px;
+}
+
+.spacer {
+  height: 7px; /* Adjust the height as needed */
+}
+
+.imgtext {
+  color: white;
+  font-size: 20px;
+  
+  text-shadow: rgba(0, 0, 0, 0.171) 0px 1px 5px;
+  
+ 
+}
+
+.cell{
+
+    background-image: url('cellgrid4.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    color: white;
+    position: relative;
+    
+    
+
+  
+
+    box-shadow: rgba(0, 0, 0, 0.145) 0px 0px 10px;
+
+   
+    
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+}
+.cellUnderlay {
+    background-color: black;
+    background: linear-gradient(to bottom, #e6dbad, #ffffff);
+    border-top: 2px solid white; /* Adjust thickness as needed */
+   /* Adjust thickness as needed */
+    
+ 
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cell::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.677); /* Black with 50% opacity */
+}
+
+.projectimage {
+    background-image: url('cellgrid3.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    position: relative;
+    z-index: 4; 
+}
+
+.projectimageUnderlay {
+    background-color: rgb(65, 150, 34);
+    height: 400px;
+}
+
+.cell-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* always full height of .cell */
+     background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0) 80%,  /* transparent for first 80% */
+        #ffffff 100%              /* fade to white in last 20% */
+    );
+    z-index: 2; /* above blackdimmer (z-index:1) but below content/image (z-index:3) */
+    pointer-events: none; /* lets clicks pass through */
+}
+
+.white-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* always full height of .cell */
+     background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0) 80%,  /* transparent for first 80% */
+        #000000 100%              /* fade to white in last 20% */
+    );
+    z-index: -3; /* above blackdimmer (z-index:1) but below content/image (z-index:3) */
+    pointer-events: none; /* lets clicks pass through */
+}
+
+.stemINTRO {
+    font-size: 30px;
+    margin-top: 10px;
+    color: rgb(243, 255, 205);
+    text-shadow: rgb(0, 0, 0) 0px 0px 10px;
+    z-index: 4; 
+    position: relative;
+}
+.stemINTROsmalltext {
+    font-size: clamp(12px, 3vw, 20px);
+    margin-top: 5px;
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+    z-index: 4; 
+    position: relative;
+    
+}
+
+.undertop {
+    font-size: clamp(12px, 3vw, 20px);
+    margin-top: 5px;
+    color: rgba(0, 0, 0, 0.625);
+    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+    z-index: 4; 
+    position: relative;
+    
+
+
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+  width: min(400px, 90vw);
+  height: 200px;
+  margin: 0 auto;
+}
+
+.grid-item {
+    background-color: black;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.webGIF {
+    background-image: url('hb.gif');
+    background-size: contain; 
+    width: 90%;   
+    height: 400px;   /* keeps original proportions */
+    background-repeat: no-repeat;  /* prevents tiling */
+    background-position: center;   /* centers the GIF */
+    background-attachment: scroll;
+    border: white 2px solid; /* Adjust thickness as needed */
+    
+    opacity: 1; 
+    position: relative;
+    z-index: 2; 
+    
+}
+
+.imagerow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.img-wrapper4 {
+    background-color: rgba(0, 0, 0, 0.729);
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid white;
+    color: white;
+    border-radius: 10px;
+    margin: 3px;
+    box-shadow: rgba(0, 0, 0, 0.703) 0px 2px 20px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.img-wrapper4 img {
+    max-width: 280px;  /* Much bigger! */
+    max-height: 200px;  /* Much bigger! */
+    width: auto;       
+    height: auto;      
+    display: block;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+
+.row{
+    display: flex;
+    flex-direction: row;
+    height: 20px;
+}
+
+.box{
+    background-color: rgba(0, 0, 0, 0.349);
+   padding: 5px;
+    border-radius: 20px;
+    border: white 2px solid;
+    height: 30px;
+    margin: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* centers horizontally */
+    align-items: center;      /* centers vertically */
+    height: 20px;
+    box-shadow: rgba(0, 0, 0, 0.316) 0px 3px 10px;
+}
+
+.insanespacer{
+    height: 50px; 
+}
+
+.blackdimmer {
+   
+
+  
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.2; /* dims background */
+    z-index: 1; /* below the image/text */
+    pointer-events: none; /* lets clicks pass through */
+}
+.flowlogo img {
+    height: 10vh;
+    z-index: 10;
+
+   filter: brightness(0) invert(1) drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));    }
+   

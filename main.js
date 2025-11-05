@@ -15,6 +15,8 @@ const cell = document.querySelector(".cell");
 const twntyfour = document.querySelector(".twentyfour");
 const imgwrapper9 = document.querySelector(".img-wrapper9");
 const imgwrapper10 = document.querySelector(".img-wrapper10");
+const imgwrapper7 = document.querySelector(".img-wrapper7");
+const imgwrapper8 = document.querySelector(".img-wrapper8");
 
 
 function changeText() {
@@ -67,6 +69,7 @@ function toggleColors() {
 
   const top6 = document.querySelector('.top6'); 
 const top7 = document.querySelector('.top7');
+const top8 = document.querySelector('.top8');
 const scratchP = document.querySelector('.white p');
 
 if (step % 2 === 0) {
@@ -85,9 +88,14 @@ if (whiteSection) {
   whiteSection.style.borderTop = step % 2 === 0 ? "5px solid black" : "5px solid white";
 }
 
- imgwrapper9.style.borderColor = step % 2 === 0 ? "green" : "black";
+ imgwrapper9.style.borderColor = step % 2 === 0 ? "white" : "black";
+ imgwrapper10.style.boxSh
 
-   imgwrapper10.style.borderColor = step % 2 === 0 ? "black" : "white";
+ top8.style.color = step % 2 === 0 ? "white" : "black";
+ top8.style.textShadow = step % 2 === 0 ? "0 0 10px rgba(0, 0, 0, 0.5)" : "0 0 10px rgba(255, 255, 255, 0.5)";
+
+imgwrapper10.style.borderColor = step % 2 === 0 ? "white" : "black";
+imgwrapper7.style.borderColor = step % 2 === 0 ? "black" : "white";
 
   step++;
 }

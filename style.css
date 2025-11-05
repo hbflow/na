@@ -144,6 +144,12 @@ body {
     align-items: center;
     justify-content: flex-start;  
 }
+
+.scratch p{
+    color: rgb(251, 251, 251);
+    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+     
+}
 .whitetoblacktransition{
   
 
@@ -420,14 +426,22 @@ body {
   border-radius: 8px;
 }
 
+.img-wrapper2 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* or 'contain' depending on your needs */
+    display: block;
+    border-radius: 8px;
+}
+
 .img-wrapper7 {
   width: 90%;           /* Control width instead of height */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid black;
-  border-radius: 8px;
+  border: 2px solid black;
+  border-radius: 11px;
 
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 20px;
 }
@@ -475,12 +489,17 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  max-width: 95%;
+   justify-self: center;
+  
 
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 20px;
   overflow: hidden; /* 👈 hides any overflow */
   width: 100%;
-  height: auto; /* 👈 let height adjust naturally */
+  height: auto;
+  
+  border: 3px solid white; /* 👈 let height adjust naturally */
 }
 
 /* Image rules for all wrappers */
@@ -651,12 +670,12 @@ body {
     left: 0;
     width: 100%;
     height: 100%; /* always full height of .cell */
-     background: linear-gradient(
-        to bottom,
-        rgba(255,255,255,0) 80%,  /* transparent for first 80% */
-        #ffffff 100%              /* fade to white in last 20% */
-    );
-    z-index: 10; /* above blackdimmer (z-index:1) but below content/image (z-index:3) */
+    background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0) 80%,
+    rgba(0, 128, 0, 1) 100%
+  );
+    z-index: 2; /* above blackdimmer (z-index:1) but below content/image (z-index:3) */
     pointer-events: none; /* lets clicks pass through */
 }
 

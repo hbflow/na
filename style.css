@@ -12,6 +12,70 @@
   font-size: clamp(12px, 2vw, 24px); 
   
 }
+
+/* Top and bottom blur overlays */
+/* Top and bottom blur overlays */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Adjust height of blur effect */
+    pointer-events: none; /* Allows clicks to pass through */
+    z-index: 999;
+    
+    /* Actual blur effect */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); /* Safari support */
+}
+
+/* Top blur - fully blurred at top, fades down */
+body::before {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent);
+    /* Add mask to make blur fade from top to bottom */
+    mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+/* Bottom blur - fully blurred at bottom, fades up */
+body::after {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.2), transparent);
+    /* Add mask to make blur fade from bottom to top */
+    mask-image: linear-gradient(to top, black 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, black 0%, transparent 100%);
+}
+
+blur-overlay {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Adjust height for the desired blur area size */
+    pointer-events: none; /* Allows clicks to pass through the overlay */
+    /* Add a semi-transparent background color for better visual blending */
+    background-color: rgba(255, 255, 255, 0.1); 
+    z-index: 10;
+    
+    /* The core blur effect */
+    backdrop-filter: blur(5px); /* Adjust blur radius as needed */
+    -webkit-backdrop-filter: blur(5px); /* For compatibility with Webkit browsers */
+}
+
+.blur-overlay.top {
+    top: 0;
+    /* Create a gradient mask for a smooth fade effect */
+    mask-image: linear-gradient(to bottom, transparent, black 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 100%);
+}
+
+.blur-overlay.bottom {
+    bottom: 0;
+    /* Create a gradient mask for a smooth fade effect */
+    mask-image: linear-gradient(to top, transparent, black 100%);
+    -webkit-mask-image: linear-gradient(to top, transparent, black 100%);
+}
 html, body {
   overflow-x: hidden; /* Prevent horizontal overflow safely */
 }
@@ -150,6 +214,43 @@ body {
     text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
      
 }
+
+.greengreen{
+  
+
+    background-color: #0f571e;
+     z-index: 3;
+    background-size: cover;
+    background-position: center;
+    /* box-shadow: rgba(0, 0, 0, 0.858) 0px 0px 10px; */
+   border-top: 2px solid white; /* Adjust thickness as needed */
+
+   
+    
+ 
+    color: white;
+    height: 900px;
+    
+    position: relative;
+
+  
+
+    
+
+   
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;  
+}
+
+.greengreen p{
+    color: rgb(251, 251, 251);
+    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+     
+}
 .whitetoblacktransition{
   
 
@@ -205,6 +306,7 @@ body {
 
    
     text-align: center;
+    border-bottom: 3px solid rgb(255, 255, 255); /* Adjust thickness as needed */
 
     display: flex;
     flex-direction: column;
@@ -264,6 +366,18 @@ body {
     margin-top: 10px;
     color: white;
     text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+    
+    
+    
+    opacity: 99%;
+     z-index: 4; 
+}
+.top11 {
+   
+    font-size: 40px;
+   
+    color: rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.118) 0px 0px 10px;
     
     
     
@@ -709,12 +823,30 @@ body {
     pointer-events: none; /* lets clicks pass through */
 }
 
+
 .green{
+    background-image: url('https://i.pinimg.com/736x/7b/77/ee/7b77ee521e81659fbfffedee7d5ce04e.jpg');
+    background-size: 150% auto;  /* make it bigger horizontally */
+
+    flex:   row;
+
+    filter: blur(5px);
+    
+    justify-content: center;
+    background-position: center;
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
     background-color: rgb(65, 150, 34);
-    height: 400px;
+    text-align: center;
+   
     z-index: 10;
+   
+
+    border-top: white 2px solid; /* Adjust thickness as needed */
     width: 100%;
+    
 }
+
 
 .stemINTRO {
     font-size: 30px;

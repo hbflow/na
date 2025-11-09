@@ -1,105 +1,126 @@
 * {
-    margin: 0;
+  margin: 0;
   padding: 0;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none;   /* Safari */
-  -khtml-user-select: none;    /* Konqueror HTML */
-  -moz-user-select: none;      /* Old versions of Firefox */
-  -ms-user-select: none;       /* Internet Explorer/Edge */
-  user-select: none;    
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
   overscroll-behavior: none;
-     
-  font-size: clamp(12px, 2vw, 24px); 
-  
+
+  font-size: clamp(12px, 2vw, 24px);
+
 }
 
 /* Top and bottom blur overlays */
 /* Top and bottom blur overlays */
 body::before,
 body::after {
-    content: "";
-    position: fixed;
-    left: 0;
-    width: 100%;
-    height: 120px; /* Adjust height of blur effect */
-    pointer-events: none; /* Allows clicks to pass through */
-    z-index: 999;
-    
-    /* Actual blur effect */
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px); /* Safari support */
+  content: "";
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  /* Adjust height of blur effect */
+  pointer-events: none;
+  /* Allows clicks to pass through */
+  z-index: 999;
+
+  /* Actual blur effect */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  /* Safari support */
 }
 
 /* Top blur - fully blurred at top, fades down */
 body::before {
-    top: 0;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent);
-    /* Add mask to make blur fade from top to bottom */
-    mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+  top: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent);
+  /* Add mask to make blur fade from top to bottom */
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
 }
 
 
 
 /* Bottom blur - fully blurred at bottom, fades up */
 body::after {
-    bottom: 0;
-    background: linear-gradient(to top, rgba(255, 255, 255, 0.2), transparent);
-    /* Add mask to make blur fade from bottom to top */
-    mask-image: linear-gradient(to top, black 0%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to top, black 0%, transparent 100%);
+  bottom: 0;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.2), transparent);
+  /* Add mask to make blur fade from bottom to top */
+  mask-image: linear-gradient(to top, black 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 0%, transparent 100%);
 }
 
 blur-overlay {
-    position: fixed;
-    left: 0;
-    width: 100%;
-    height: 100px; /* Adjust height for the desired blur area size */
-    pointer-events: none; /* Allows clicks to pass through the overlay */
-    /* Add a semi-transparent background color for better visual blending */
-    background-color: rgba(255, 255, 255, 0.1); 
-    z-index: 10;
-    
-    /* The core blur effect */
-    backdrop-filter: blur(5px); /* Adjust blur radius as needed */
-    -webkit-backdrop-filter: blur(5px); /* For compatibility with Webkit browsers */
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  /* Adjust height for the desired blur area size */
+  pointer-events: none;
+  /* Allows clicks to pass through the overlay */
+  /* Add a semi-transparent background color for better visual blending */
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 10;
+
+  /* The core blur effect */
+  backdrop-filter: blur(5px);
+  /* Adjust blur radius as needed */
+  -webkit-backdrop-filter: blur(5px);
+  /* For compatibility with Webkit browsers */
 }
 
 .blur-overlay.top {
-    top: 0;
-    /* Create a gradient mask for a smooth fade effect */
-    mask-image: linear-gradient(to bottom, transparent, black 100%);
-    -webkit-mask-image: linear-gradient(to bottom, transparent, black 100%);
+  top: 0;
+  /* Create a gradient mask for a smooth fade effect */
+  mask-image: linear-gradient(to bottom, transparent, black 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 100%);
 }
 
 .blur-overlay.bottom {
-    bottom: 0;
-    /* Create a gradient mask for a smooth fade effect */
-    mask-image: linear-gradient(to top, transparent, black 100%);
-    -webkit-mask-image: linear-gradient(to top, transparent, black 100%);
+  bottom: 0;
+  /* Create a gradient mask for a smooth fade effect */
+  mask-image: linear-gradient(to top, transparent, black 100%);
+  -webkit-mask-image: linear-gradient(to top, transparent, black 100%);
 }
-html, body {
-  overflow-x: hidden; /* Prevent horizontal overflow safely */
+
+html,
+body {
+  overflow-x: hidden;
+  /* Prevent horizontal overflow safely */
 }
+
 @font-face {
   font-family: 'Campton';
   src: url('CamptonBlack.otf') format('opentype');
-  
-  font-weight: 900; /* since it's 'Black', which means extra bold */
+
+  font-weight: 900;
+  /* since it's 'Black', which means extra bold */
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Modern1';
   src: url('Moderniz.otf') format('opentype');
-  
-  font-weight: 900; /* since it's 'Black', which means extra bold */
+
+  font-weight: 900;
+  /* since it's 'Black', which means extra bold */
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Modern Luxury';
   src: url('modern-luxury.regular.ttf') format('truetype');
-  
-  font-weight: 900; /* since it's 'Black', which means extra bold */
+
+  font-weight: 900;
+  /* since it's 'Black', which means extra bold */
   font-style: normal;
 }
 
@@ -107,445 +128,514 @@ html, body {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-1000px);
   }
 }
+
 body {
-    background-color: white;
-    font-family: 'Modern1', sans-serif;
-   
+  background-color: white;
+  font-family: 'Modern1', sans-serif;
+
 }
-.fullimage{
 
-    background-image: url('nolana2.png');
-    background-size: cover;
-     background-position: left center; 
-    background-attachment: scroll;
-    color: white;
-    position: relative;
-    border-top: white 2px solid; /* Adjust thickness as needed */
-    
-    
+.alwaysonscreenimage {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+  background-image: url("na2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: 9999;
+  filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.4));
+}
+.bigblack{
+  background-color: black;
+  height: 100px;
+  background-image: url("na2.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto 90%;
+  width: 30%;
+  height: 30%;
+}
 
+.image-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  background-color: black;
+}
+
+.image-row img {
+  height: 40%;
+  object-fit: contain;
+}
+
+.fullimage {
+
+  background-image: url('testbackdrop3.jpg');
+  background-size: cover;
+  background-position: left center;
+  background-attachment: scroll;
   
+  color: white;
+  position: relative;
+  /* border-top: white 2px solid; */
+ 
+  /* Adjust thickness as needed */
 
-    box-shadow: black 100px 10x 10px;
 
-   
-    height: 60vh;
-    text-align: center;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;  
+
+
+  box-shadow: black 100px 10x 10px;
+
+
+  height: 100vh;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.link{
+.link {
   color: rgb(161, 161, 229);
 }
-.intro{
 
-    background-image: url('testbackdrop2.png');
-    background-size: cover;
-    background-position: center 0 ;
-    background-attachment: scroll;
-    color: white;
-    position: relative;
-    
-    
+.intro {
 
+  background-image: url('testbackdrop2.jpg');
+  background-size: cover;
   
+  background-attachment: scroll;
+  background-position: center 0;
+  color: white;
+  position: relative;
 
-    box-shadow: black 100px 10x 10px;
 
-   
-    height: 90vh;
-    text-align: center;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;  
+
+
+  box-shadow: black 100px 10x 10px;
+
+
+  height: 90vh;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.twentyfour{
 
-    background-image: url('testbackdrop2.png');
-    background-size: cover;
-    background-position: center 0 ;
-    background-attachment: scroll;
-    color: white;
-    position: relative;
-    
-    
+.twentyfour {
+
+  background-image: url('testbackdrop2.png');
+  background-size: cover;
+  background-position: center 0;
+  background-attachment: scroll;
+  color: white;
+  position: relative;
+
+
+
+
+
+  box-shadow: black 100px 10x 10px;
+
 
   
+  text-align: center;
 
-    box-shadow: black 100px 10x 10px;
-
-   
-    height: 90vh;
-    text-align: center;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.twentyfour{
 
-  
+.twentyfour {
 
-    background-image: url('hbflowof-min.jpg');
-    background-size: cover;
-    background-position: center 0 ;
-    background-attachment: scroll;
-    color: white;
-    position: relative;
-    border-bottom: white 2px solid; /* Adjust thickness as needed */
-    
-    
 
-  
 
-    box-shadow: black 100px 10x 10px;
-    
+  background-image: url('hbflowof-min.jpg');
+  background-size: cover;
+  background-position: center 0;
+  background-attachment: scroll;
+  color: white;
+  position: relative;
+  border-bottom: white 2px solid;
+  /* Adjust thickness as needed */
 
-   
-   
-    text-align: center;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;  
+
+
+
+  box-shadow: black 100px 10x 10px;
+
+
+
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .twentyfour::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-   background: linear-gradient(to bottom, tan 0px, rgba(0,0,0,0) 22%);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, tan 0px, rgba(0, 0, 0, 0) 22%);
 
-    pointer-events: none; /* ensures it doesn’t block clicks */
-    z-index: 0; /* place above background but below text if needed */
-}
-.scratch{
-  
-
-    background-color: tan;
-     z-index: 3;
-    background-size: cover;
-    background-position: center;
-    /* box-shadow: rgba(0, 0, 0, 0.858) 0px 0px 10px; */
-   border-top: 2px solid white; /* Adjust thickness as needed */
-
-   
-    
- 
-    color: white;
-    
-    position: relative;
-
-  
-
-    
-
-   
-    text-align: center;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;  
+  pointer-events: none;
+  /* ensures it doesn’t block clicks */
+  z-index: 0;
+  /* place above background but below text if needed */
 }
 
-.scratch p{
-    color: rgb(251, 251, 251);
-    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
-     
+.scratch {
+
+
+  background-color: tan;
+  z-index: 3;
+  background-size: cover;
+  background-position: center;
+  /* box-shadow: rgba(0, 0, 0, 0.858) 0px 0px 10px; */
+  border-top: 2px solid white;
+  /* Adjust thickness as needed */
+
+
+
+
+  color: white;
+
+  position: relative;
+
+
+
+
+
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.greengreen{
-  
+.scratch p {
+  color: rgb(251, 251, 251);
+  text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
 
-    background: url('https://64.media.tumblr.com/fe05c6332981db9bede4d240834258dd/9483a0f60ca080c9-84/s400x600/745d844b3870e542c93b6663329c9b5eddfc0430.gif');
-     z-index: 3;
-    background-size: cover;
-    background-position: center;
-    /* box-shadow: rgba(0, 0, 0, 0.858) 0px 0px 10px; */
-   border-top: 2px solid white; /* Adjust thickness as needed */
+}
 
-   
-    
- 
-    color: white;
-  
-    
-    position: relative;
+.greengreen {
 
-  
 
-    
+  background: url('https://64.media.tumblr.com/fe05c6332981db9bede4d240834258dd/9483a0f60ca080c9-84/s400x600/745d844b3870e542c93b6663329c9b5eddfc0430.gif');
+  z-index: 3;
+  background-size: cover;
+  background-position: center;
+  /* box-shadow: rgba(0, 0, 0, 0.858) 0px 0px 10px; */
+  border-top: 2px solid white;
+  /* Adjust thickness as needed */
 
-   
-    text-align: center;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;  
+
+
+  color: white;
+
+
+  position: relative;
+
+
+
+
+
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .greengreenblue {
-  
 
-    background: url('https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUycmx6cjhtNmwxMTZuMnJkbnIweHoxeW4xd3pqMWt0dTdqZnVmdHlxMiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MyWrJJIdAfoJuEPlLP/200w.gif');
-     z-index: 3;
-    background-size: cover;
-    background-position: center;
-    /* box-shadow: rgba(0, 0, 0, 0.858) 0px 0px 10px; */
-   border-top: 2px solid white; /* Adjust thickness as needed */
 
-   
-    
- 
-    color: white;
-  
-    
-    position: relative;
+  background: url('https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUycmx6cjhtNmwxMTZuMnJkbnIweHoxeW4xd3pqMWt0dTdqZnVmdHlxMiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MyWrJJIdAfoJuEPlLP/200w.gif');
+  z-index: 3;
+  background-size: cover;
+  background-position: center;
+  /* box-shadow: rgba(0, 0, 0, 0.858) 0px 0px 10px; */
+  border-top: 2px solid white;
+  /* Adjust thickness as needed */
 
-  
 
-    
 
-   
-    text-align: center;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;  
+  color: white;
+
+
+  position: relative;
+
+
+
+
+
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.greengreen p{
-    color: rgb(251, 251, 251);
-    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
-     
-}
-.greengreenblue p{
-    color: white;
-    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
-     
-}
-.whitetoblacktransition{
-  
-
-   background: linear-gradient(to bottom, white, black);
-     z-index: 3;
-    background-size: cover;
-    background-position: center;
-    text-shadow: black 0px 0px 10px;
-    /* box-shadow: rgba(0, 0, 0, 0.858) 0px 0px 10px; */
-  
-
-   
-    
- 
-    color: white;
-    position: relative;
-
-  
-
-    
-
-   height: 100px;
-      
-
+.greengreen p {
+  color: rgb(251, 251, 251);
+  text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
 
 }
 
+.greengreenblue p {
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
 
-.black{
+}
+
+.whitetoblacktransition {
+
+
+  background: linear-gradient(to bottom, white, black);
+  z-index: 3;
+  background-size: cover;
+  background-position: center;
+  text-shadow: black 0px 0px 10px;
+  /* box-shadow: rgba(0, 0, 0, 0.858) 0px 0px 10px; */
+
+
+
+
+
+  color: white;
+  position: relative;
+
+
+
+
+
+  height: 100px;
+
+
+
+}
+
+
+.black {
 
   /* background-image: url('upper.png'); */
-  
 
-    background-color: black;
-    
-     z-index: 3;
-    background-size: cover;
-    background-position: center;
-    text-shadow: black 0px 0px 10px;
-    /* box-shadow: rgba(0, 0, 0, 0.858) 0px 0px 10px; */
-  
 
-   
-    
- 
-    color: white;
-   
-    position: relative;
+  background-color: black;
 
-  
+  z-index: 3;
+  background-size: cover;
+  background-position: center;
+  text-shadow: black 0px 0px 10px;
+  /* box-shadow: rgba(0, 0, 0, 0.858) 0px 0px 10px; */
 
-    
 
-   
-    text-align: center;
-    border-bottom: 3px solid rgb(255, 255, 255); /* Adjust thickness as needed */
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;  
+
+
+  color: white;
+
+  position: relative;
+
+
+
+
+
+
+  text-align: center;
+  border-bottom: 3px solid rgb(255, 255, 255);
+  /* Adjust thickness as needed */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.white{
-  
+.white {
 
-    background-color: white;
-     z-index: 3;
-    background-size: cover;
-    background-position: center;
-    text-shadow: black 0px 0px 10px;
-    /* box-shadow: rgba(0, 0, 0, 0.858) 0px 0px 10px; */
-   border-top: 3px solid rgb(0, 0, 0); /* Adjust thickness as needed */
 
-   
-    
- 
-    color: white;
-    position: relative;
+  background-color: white;
+  z-index: 3;
+  background-size: cover;
+  background-position: center;
+  text-shadow: black 0px 0px 10px;
+  /* box-shadow: rgba(0, 0, 0, 0.858) 0px 0px 10px; */
+  border-top: 3px solid rgb(0, 0, 0);
+  /* Adjust thickness as needed */
 
-  
 
-    
 
-   
-    text-align: center;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;  
+  color: white;
+  position: relative;
+
+
+
+
+
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .top {
-    margin-top: -50px;
-    font-size: clamp(16px, 10vw, 100px);
-    
-    text-shadow: black 0px 0px 10px;
-    opacity: 70%;
+  margin-top: -50px;
+  font-size: clamp(16px, 10vw, 100px);
+
+  text-shadow: black 0px 0px 10px;
+  opacity: 70%;
 }
+
 .top2 {
-   
-     font-size: clamp(16px, 6vw, 30px);
-    margin-top: -5px;
-    text-shadow: black 0px 0px 10px;
-    opacity: 0.77;
+
+  font-size: clamp(16px, 6vw, 30px);
+  margin-top: -5px;
+  text-shadow: black 0px 0px 10px;
+  opacity: 0.77;
 }
 
 
 .top3 {
-   
-    font-size: 10vh;
-    margin-top: 10px;
-    color: white;
-    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
-    
-    
-    
-    opacity: 99%;
-     z-index: 4; 
+
+  font-size: 10vh;
+  margin-top: 10px;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+
+
+
+  opacity: 99%;
+  z-index: 4;
 }
+
 .top11 {
-   
-    font-size: 40px;
-   
-    color: rgb(255, 255, 255);
-    text-shadow: rgba(0, 0, 0, 0.118) 0px 0px 10px;
-    
-    
-    
-    opacity: 99%;
-     z-index: 4; 
+
+  font-size: 40px;
+
+  color: rgb(255, 255, 255);
+  text-shadow: rgba(0, 0, 0, 0.118) 0px 0px 10px;
+
+
+
+  opacity: 99%;
+  z-index: 4;
 }
 
 .top15 {
-   
-    
-   
-    
-   
-    font-size: 50px;
-    position: relative;
 
-    
-   
-    color:  white;
-    text-shadow: rgba(0, 0, 0, 0.153) 0px 4px 10px;
-    
-    
-    
-    opacity: 99%;
-    z-index: 4; 
-    
-}
-.top4{
-   
-    font-size: 10vh;
-    margin-top: 10px;
-    color: rgb(255, 255, 255);
-    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
-    
-    
-    
-    opacity: 99%;
-     z-index: 4; 
-}
-.top6{
-   
-    font-size: 40px;
-   
-    color: rgba(0, 0, 0, 0.636);
-    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
-    
-    
-    
-    opacity: 99%;
-     z-index: 4; 
-}
-.top7{
-   
-    font-size: 30px;
-  
-    color: rgb(184, 140, 64);
-    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
-    
-    
-    
-    opacity: 99%;
-     z-index: 4; 
+
+
+
+
+  font-size: 50px;
+  position: relative;
+
+
+
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.153) 0px 4px 10px;
+
+
+
+  opacity: 99%;
+  z-index: 4;
+
 }
 
-.white p{
-    color: rgba(0, 0, 0, 0.59);
-    font-size: clamp(12px, 3vw, 24px);
-    
-    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
-    opacity: 99%;
-     z-index: 4; 
+.top4 {
+
+  font-size: 10vh;
+  margin-top: 10px;
+  color: rgb(255, 255, 255);
+  text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+
+
+
+  opacity: 99%;
+  z-index: 4;
 }
+
+.top6 {
+
+  font-size: 40px;
+
+  color: rgba(0, 0, 0, 0.636);
+  text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+
+
+
+  opacity: 99%;
+  z-index: 4;
+}
+
+.top7 {
+
+  font-size: 30px;
+
+  color: rgb(184, 140, 64);
+  text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+
+
+
+  opacity: 99%;
+  z-index: 4;
+}
+
+.white p {
+  color: rgba(0, 0, 0, 0.59);
+  font-size: clamp(12px, 3vw, 24px);
+
+  text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+  opacity: 99%;
+  z-index: 4;
+}
+
 .divbottom {
-    position: absolute; /* Pushes the child to the bottom */
-    bottom: 0px; /* Adjust this value to position it higher or lower */
-    width: 100%;
-    transform: translateY(-5px); /* Ensure it spans the full width */
+  position: absolute;
+  /* Pushes the child to the bottom */
+  bottom: 0px;
+  /* Adjust this value to position it higher or lower */
+  width: 100%;
+  transform: translateY(-5px);
+  /* Ensure it spans the full width */
 }
 
 .gifcover {
@@ -553,13 +643,13 @@ body {
   top: 0;
   left: 0;
   background-image: url('https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyZ2t2em9iNm9tZDd5eXgxcWRtdDRqb2tyZ3Vtdjl6ZGd1Y3o2M3pmNiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/isqxY03RuhGxNbCPzY/200w.gif');
-    background-size: cover;
-    
+  background-size: cover;
+
   width: 100%;
   height: 100%;
-  
+
   opacity: 153%;
-  
+
 
 }
 
@@ -576,8 +666,8 @@ body {
   height: 100%;
   opacity: 7%;
   filter: blur(3px);
-  
- 
+
+
 
 
 }
@@ -594,8 +684,8 @@ body {
   height: 100%;
   opacity: 7%;
   filter: blur(3px);
-  
- 
+
+
 
 
 }
@@ -613,8 +703,8 @@ body {
   opacity: 100%;
   filter: blur(10%);
   z-index: -2;
-  
- 
+
+
 
 
 }
@@ -627,31 +717,34 @@ body {
   width: 100%;
   height: 100vh;
   opacity: 0%;
-  
+
 }
 
 .divider {
-    height: 0vh; /* Adjust the height as needed */
-    background-color: black; 
-    z-index: 100; /* Higher than the blackcover's implicit z-index */
-    position: relative; /* z-index only works on positioned elements */
-    
-    /* Optional: Add a background color */
+  height: 0vh;
+  /* Adjust the height as needed */
+  background-color: black;
+  z-index: 100;
+  /* Higher than the blackcover's implicit z-index */
+  position: relative;
+  /* z-index only works on positioned elements */
+
+  /* Optional: Add a background color */
 }
 
 .scrollwheel {
-    
-    
-   
-    width: 100%;
-    height: 100%;
-     z-index: 1; 
-     display: flex;
- 
-    animation: slide 10s linear infinite;
-   
-    
-    
+
+
+
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+
+  animation: slide 10s linear infinite;
+
+
+
 }
 
 
@@ -663,17 +756,18 @@ body {
   align-items: center;
   flex-direction: column;
   border: 2px solid white;
-  
+
   border-radius: 8px;
   margin: 3px;
   box-shadow: rgba(0, 0, 0, 0.181) 0px 0px 5px;
-  
+
 }
 
 
 
 .img-wrapper2 {
-  width: 90%;           /* Control width instead of height */
+  width: 90%;
+  /* Control width instead of height */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -685,22 +779,26 @@ body {
 }
 
 .img-wrapper2 img {
-  width: 100%;            /* Fill wrapper's width */
-  height: auto;           /* Keeps proportions */
+  width: 100%;
+  /* Fill wrapper's width */
+  height: auto;
+  /* Keeps proportions */
   display: block;
   border-radius: 8px;
 }
 
 .img-wrapper2 video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* or 'contain' depending on your needs */
-    display: block;
-    border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* or 'contain' depending on your needs */
+  display: block;
+  border-radius: 8px;
 }
 
 .img-wrapper7 {
-  width: 90%;           /* Control width instead of height */
+  width: 90%;
+  /* Control width instead of height */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -712,14 +810,17 @@ body {
 }
 
 .img-wrapper7 img {
-  width: 100%;            /* Fill wrapper's width */
-  height: auto;           /* Keeps proportions */
+  width: 100%;
+  /* Fill wrapper's width */
+  height: auto;
+  /* Keeps proportions */
   display: block;
   border-radius: 8px;
 }
 
 .img-wrapper11 {
-  width: 90%;           /* Control width instead of height */
+  width: 90%;
+  /* Control width instead of height */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -731,8 +832,10 @@ body {
 }
 
 .img-wrapper11 img {
-  width: 100%;            /* Fill wrapper's width */
-  height: auto;           /* Keeps proportions */
+  width: 100%;
+  /* Fill wrapper's width */
+  height: auto;
+  /* Keeps proportions */
   display: block;
   border-radius: 8px;
 }
@@ -745,7 +848,8 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  align-items: start; /* 👈 prevents overlapping when heights differ */
+  align-items: start;
+  /* 👈 prevents overlapping when heights differ */
 }
 
 .img-wrapper9,
@@ -755,27 +859,75 @@ body {
   align-items: center;
   flex-direction: column;
   max-width: 95%;
-   justify-self: center;
-  
+  justify-self: center;
+
 
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 20px;
-  overflow: hidden; /* 👈 hides any overflow */
+  overflow: hidden;
+  /* 👈 hides any overflow */
   width: 100%;
   height: auto;
-  
-  border: 3px solid white; /* 👈 let height adjust naturally */
+
+  border: 3px solid white;
+  /* 👈 let height adjust naturally */
 }
 
 
-.gallery2 { display: grid; margin: 15px; gap: 12px; align-items: start; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* auto-fit makes wrapping automatic */ } /* SIMPLE IMAGE WRAPPER */ .img-wrapper15 { width: 100%; border-radius: 8px; box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 20px; overflow: hidden; border: 3px solid white; } /* SIMPLE IMAGE - THAT'S IT */ .img-wrapper15 img { width: 100%; height: auto; display: block; }
+.gallery2 {
+  display: grid;
+  margin: 15px;
+  width: 100%;
+  
+  gap: 13px;
+  justify-content: center;
+
+  align-items: start;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  /* auto-fit makes wrapping automatic */
+}
+
+/* SIMPLE IMAGE WRAPPER */
+.img-wrapper15 {
+  position: relative;
+  width: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+  border: rgb(0, 0, 0) 1.5px solid;
+}
+
+.img-wrapper15 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px; /* keep consistent rounding */
+}
+
+/* This creates the bevel *in front* of the image */
+.img-wrapper15::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* shorthand for top/right/bottom/left: 0 */
+  border-radius: inherit;
+  pointer-events: none;
+
+   box-shadow:
+    inset 4px 4px 2px rgba(255, 255, 255, 0.7),   /* crisp edge highlight */
+    inset -4px -4px 2px rgba(0, 0, 0, 0.55),      /* crisp dark edge */
+    inset 1px 1px 0px rgba(255, 255, 255, 0.9),   /* micro highlight for bevel ridge */
+    inset -1px -1px 0px rgba(0, 0, 0, 0.35);
+}
+
 /* Image rules for all wrappers */
 .img-wrapper9 img,
 .img-wrapper10 img {
-  width: 100%;       /* fill container width */
-  height: auto;      /* maintain aspect ratio */
+  width: 100%;
+  /* fill container width */
+  height: auto;
+  /* maintain aspect ratio */
   display: block;
-  object-fit: cover; /* optional: keeps clean scaling */
+  object-fit: cover;
+  /* optional: keeps clean scaling */
 }
 
 
@@ -784,127 +936,145 @@ body {
 
 
 .img-wrapper3 {
-  width: 90%;           /* Control width instead of height */
+  width: 90%;
+  /* Control width instead of height */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-   border: 2px solid white;
-    border-radius: 10px;
-    margin: 3px;
-    box-shadow: black 0px 2px 20px;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin: 3px;
+  box-shadow: black 0px 2px 20px;
   z-index: 6;
 
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 20px;
 }
 
 .img-wrapper3 img {
-  width: 100%;            /* Fill wrapper's width */
-  height: auto;           /* Keeps proportions */
+  width: 100%;
+  /* Fill wrapper's width */
+  height: auto;
+  /* Keeps proportions */
   display: block;
   border-radius: 8px;
   z-index: 6;
 }
 
 .img-wrapper5 {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: 1px solid black;
-    border-radius: 3px;
-    margin: 3px;
-    box-shadow: rgba(0, 0, 0, 0.305) 0px 2px 20px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 3px;
+  box-shadow: rgba(0, 0, 0, 0.305) 0px 2px 20px;
 
-    width: 90%;           /* responsive width */
-    max-width: 500px;     /* prevents it from getting too wide */
-    height: auto;         /* lets wrapper grow naturally */
+  width: 90%;
+  /* responsive width */
+  max-width: 500px;
+  /* prevents it from getting too wide */
+  height: auto;
+  /* lets wrapper grow naturally */
 }
 
 .img-wrapper5 img {
-    width: auto;           /* preserve aspect ratio */
-    max-width: 100%;       /* never exceeds wrapper width */
-    height: 80vh;          /* tall, relative to viewport */
-    max-height: 90vh;      /* never exceeds viewport height */
-    display: block;
-    border-radius: 2px;
-    object-fit: contain;   /* ensures GIF fits nicely */
+  width: auto;
+  /* preserve aspect ratio */
+  max-width: 100%;
+  /* never exceeds wrapper width */
+  height: 80vh;
+  /* tall, relative to viewport */
+  max-height: 90vh;
+  /* never exceeds viewport height */
+  display: block;
+  border-radius: 2px;
+  object-fit: contain;
+  /* ensures GIF fits nicely */
 }
 
 .abovelink {
-    font-size: 14px;
-    margin-top: 10px;
-    color: rgba(0, 0, 0, 0.589);
-    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
-    z-index: 4; 
-    position: relative;
+  font-size: 14px;
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.589);
+  text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+  z-index: 4;
+  position: relative;
 }
+
 .link a {
-    font-size: 10px;
-    color: rgb(19, 58, 88);
+  font-size: 10px;
+  color: rgb(19, 58, 88);
 }
 
 
 
 .img-wrapper img {
-   height: 100%;              /* fill wrapper’s height */
-  width: auto;  /* keeps proportions */
+  height: 100%;
+  /* fill wrapper’s height */
+  width: auto;
+  /* keeps proportions */
   display: block;
   border-radius: 8px;
 }
 
 .spacer {
-  height: 7px; /* Adjust the height as needed */
+  height: 7px;
+  /* Adjust the height as needed */
 }
 
 .imgtext {
   color: white;
   font-size: 20px;
-  
+
   text-shadow: rgba(0, 0, 0, 0.171) 0px 1px 5px;
-  
- 
+
+
 }
 
-.cell{
+.cell {
 
-    background-image: url('cellgrid4.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
-    color: white;
-    position: relative;
-    
-    
+  background-image: url('cellgrid4.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  color: white;
+  position: relative;
 
-  
 
-    box-shadow: rgba(0, 0, 0, 0.145) 0px 0px 10px;
 
-   
-    
-    text-align: center;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;  
+
+  box-shadow: rgba(0, 0, 0, 0.145) 0px 0px 10px;
+
+
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
 .cellUnderlay {
-    background-color: black;
-    background: linear-gradient(to bottom, #e6dbad, #ffffff);
-    border-top: 2px solid white; /* Adjust thickness as needed */
-   /* Adjust thickness as needed */
-    
- 
+  background-color: black;
+  background: linear-gradient(to bottom, #e6dbad, #ffffff);
+  border-top: 2px solid white;
+  /* Adjust thickness as needed */
+  /* Adjust thickness as needed */
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
 .cell::after {
   content: '';
   position: absolute;
@@ -912,102 +1082,129 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.677); /* Black with 50% opacity */
+  background-color: rgba(0, 0, 0, 0.677);
+  /* Black with 50% opacity */
 }
 
 .projectimage {
-    background-image: url('cellgrid3.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 80%;
-    height: 80%;
-    margin: auto;
-    position: relative;
-    z-index: 4; 
+  background-image: url('cellgrid3.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  position: relative;
+  z-index: 4;
 }
 
 .projectimageUnderlay {
-    background-color: rgb(65, 150, 34);
-    height: 400px;
+  background-color: rgb(65, 150, 34);
+  height: 400px;
 }
 
 .cell-gradient {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* always full height of .cell */
-    background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0) 80%,
-    rgba(0, 128, 0, 1) 100%
-  );
-    z-index: 2; /* above blackdimmer (z-index:1) but below content/image (z-index:3) */
-    pointer-events: none; /* lets clicks pass through */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* always full height of .cell */
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0) 80%,
+      rgba(0, 128, 0, 1) 100%);
+  z-index: 2;
+  /* above blackdimmer (z-index:1) but below content/image (z-index:3) */
+  pointer-events: none;
+  /* lets clicks pass through */
 }
 
+.cell-gradient2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* always full height of .cell */
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0) 80%,
+      rgb(0, 0, 0) 100%);
+  z-index: 2;
+  /* above blackdimmer (z-index:1) but below content/image (z-index:3) */
+  pointer-events: none;
+  /* lets clicks pass through */
+}
 .white-gradient {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* always full height of .cell */
-     background: linear-gradient(
-        to bottom,
-        rgba(255,255,255,0) 80%,  /* transparent for first 80% */
-        #000000 100%              /* fade to white in last 20% */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* always full height of .cell */
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0) 80%,
+      /* transparent for first 80% */
+      #000000 100%
+      /* fade to white in last 20% */
     );
-    z-index: -3; /* above blackdimmer (z-index:1) but below content/image (z-index:3) */
-    pointer-events: none; /* lets clicks pass through */
+  z-index: -3;
+  /* above blackdimmer (z-index:1) but below content/image (z-index:3) */
+  pointer-events: none;
+  /* lets clicks pass through */
 }
 
 .black-gradient {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* always full height of .cell */
-     background: linear-gradient(
-        to bottom,
-        rgba(255,255,255,0) 80%,  /* transparent for first 80% */
-        #f3f3f3 100%              /* fade to white in last 20% */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* always full height of .cell */
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0) 80%,
+      /* transparent for first 80% */
+      #f3f3f3 100%
+      /* fade to white in last 20% */
     );
-    z-index: -3; /* above blackdimmer (z-index:1) but below content/image (z-index:3) */
-    pointer-events: none; /* lets clicks pass through */
+  z-index: -3;
+  /* above blackdimmer (z-index:1) but below content/image (z-index:3) */
+  pointer-events: none;
+  /* lets clicks pass through */
 }
 
 
-.green{
-    /* background-image: url('blue2.png'); */
-    height: fit-content;
-    background-size: 150% auto;  /* make it bigger horizontally */
+.green {
+  /* background-image: url('blue2.png'); */
+  height: fit-content;
+  background-size: 150% auto;
+  /* make it bigger horizontally */
 
-    flex:   row;
-    
-    position: relative;
+  flex: row;
 
-    
-    
-    justify-content: center;
-    background-position: center;
-    color: white;
-    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
-   
-    text-align: center;
-   
-    z-index: 10;
-   
+  position: relative;
 
-    border-top: white 2px solid; /* Adjust thickness as needed */
-    width: 100%;
-    
+
+
+  justify-content: center;
+  background-position: center;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+
+  text-align: center;
+
+  z-index: 10;
+
+
+  border-top: white 2px solid;
+  /* Adjust thickness as needed */
+  width: 100%;
+
 }
 
 .gallery {
   display: grid;
   gap: 12px;
-  align-items: start; 
+  align-items: start;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   /* auto-fit makes wrapping automatic */
 }
@@ -1015,9 +1212,11 @@ body {
 /* Each image container is a fixed visual shape */
 .imageDiv {
   width: 100%;
-  aspect-ratio: 1 / 1;     /* makes all items perfect squares */
+  aspect-ratio: 1 / 1;
+  /* makes all items perfect squares */
   overflow: hidden;
-  border-radius: 8px;      /* optional, just looks good */
+  border-radius: 8px;
+  /* optional, just looks good */
   position: relative;
 }
 
@@ -1025,37 +1224,39 @@ body {
 .imageDiv img {
   width: 100%;
   height: 100%;
-  object-fit: cover;        /* ensures no distortion */
+  object-fit: cover;
+  /* ensures no distortion */
   display: block;
 }
 
 
 .stemINTRO {
-    font-size: 30px;
-    margin-top: 10px;
-    color: rgb(243, 255, 205);
-    text-shadow: rgb(0, 0, 0) 0px 0px 10px;
-    z-index: 4; 
-    position: relative;
+  font-size: 30px;
+  margin-top: 10px;
+  color: rgb(243, 255, 205);
+  text-shadow: rgb(0, 0, 0) 0px 0px 10px;
+  z-index: 4;
+  position: relative;
 }
+
 .stemINTROsmalltext {
-    font-size: clamp(12px, 3vw, 20px);
-    margin-top: 5px;
-    color: white;
-    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
-    z-index: 4; 
-    position: relative;
-    
+  font-size: clamp(12px, 3vw, 20px);
+  margin-top: 5px;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+  z-index: 4;
+  position: relative;
+
 }
 
 .undertop {
-    font-size: clamp(12px, 3vw, 20px);
-    margin-top: 5px;
-    color: rgba(0, 0, 0, 0.625);
-    text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
-    z-index: 4; 
-    position: relative;
-    
+  font-size: clamp(12px, 3vw, 20px);
+  margin-top: 5px;
+  color: rgba(0, 0, 0, 0.625);
+  text-shadow: rgba(0, 0, 0, 0.123) 0px 0px 10px;
+  z-index: 4;
+  position: relative;
+
 
 
 }
@@ -1073,130 +1274,138 @@ body {
 }
 
 .grid-item {
-    background-color: black;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-    width: 100%;
-    height: 100%;
+  background-color: black;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
 .webGIF {
-    background-image: url('hb.gif');
-    background-size: contain; 
-    width: 90%;   
-    height: 400px;   /* keeps original proportions */
-    background-repeat: no-repeat;  /* prevents tiling */
-    background-position: center;   /* centers the GIF */
-    background-attachment: scroll;
-    border: white 2px solid; /* Adjust thickness as needed */
-    
-    opacity: 1; 
-    position: relative;
-    z-index: 2; 
-    
+  background-image: url('hb.gif');
+  background-size: contain;
+  width: 90%;
+  height: 400px;
+  /* keeps original proportions */
+  background-repeat: no-repeat;
+  /* prevents tiling */
+  background-position: center;
+  /* centers the GIF */
+  background-attachment: scroll;
+  border: white 2px solid;
+  /* Adjust thickness as needed */
+
+  opacity: 1;
+  position: relative;
+  z-index: 2;
+
 }
 
 .imagerow {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: auto;
 }
 
 .img-wrapper4 {
-    background-color: rgba(0, 0, 0, 0.729);
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
-    color: white;
-    border-radius: 10px;
-    
-    box-shadow: rgba(0, 0, 0, 0.703) 0px 2px 20px;
-   
-    font-size: 14px;
-    margin-bottom: 5px;
-    object-fit: contain;
+  background-color: rgba(0, 0, 0, 0.729);
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  color: white;
+  border-radius: 10px;
+
+  box-shadow: rgba(0, 0, 0, 0.703) 0px 2px 20px;
+
+  font-size: 14px;
+  margin-bottom: 5px;
+  object-fit: contain;
 }
 
 .img-wrapper4 img {
-    width: auto;
-  height: 200px; 
-  max-width: 90vw;/* 👈 set fixed height */
-    
-    display: block;
-    border: 2px solid white;
-    border-radius: 10px;
-    object-fit: contain;
-    
+  width: auto;
+  height: 200px;
+  max-width: 90vw;
+  /* 👈 set fixed height */
+
+  display: block;
+  border: 2px solid white;
+  border-radius: 10px;
+  object-fit: contain;
+
 }
 
-.column{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 5px;
-    font-size: 16px;
-    color: white;
-    text-shadow: rgba(0, 0, 0, 0.597) 0px 0px 10px;
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+  font-size: 16px;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.597) 0px 0px 10px;
 }
 
 
-.row{
-    display: flex;
-    flex-direction: row;
-    height: 20px;
+.row {
+  display: flex;
+  flex-direction: row;
+  height: 20px;
 }
 
-.box{
-    background-color: rgba(0, 0, 0, 0.349);
-   padding: 5px;
-    border-radius: 20px;
-    border: white 2px solid;
-    height: 30px;
-    margin: 2px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center; /* centers horizontally */
-    align-items: center;      /* centers vertically */
-    height: 20px;
-    box-shadow: rgba(0, 0, 0, 0.316) 0px 3px 10px;
+.box {
+  background-color: rgba(0, 0, 0, 0.349);
+  padding: 5px;
+  border-radius: 20px;
+  border: white 2px solid;
+  height: 30px;
+  margin: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* centers horizontally */
+  align-items: center;
+  /* centers vertically */
+  height: 20px;
+  box-shadow: rgba(0, 0, 0, 0.316) 0px 3px 10px;
 }
 
-.insanespacer{
-    height: 50px; 
+.insanespacer {
+  height: 50px;
 }
 
 .blackdimmer {
-   
 
-  
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    opacity: 0.2; /* dims background */
-    z-index: 1; /* below the image/text */
-    pointer-events: none; /* lets clicks pass through */
+
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.2;
+  /* dims background */
+  z-index: 1;
+  /* below the image/text */
+  pointer-events: none;
+  /* lets clicks pass through */
 }
 
 
 .flowlogo img {
-    width: 100%;
-    max-width: 1000px;
-    z-index: 10;
+  width: 100%;
+  max-width: 1000px;
+  z-index: 10;
 
-   filter: brightness(0) invert(1) drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));    }
-   
-
-   
+  filter: brightness(0) invert(1) drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}

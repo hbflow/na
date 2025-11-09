@@ -17,6 +17,10 @@ const imgwrapper9 = document.querySelector(".img-wrapper9");
 const imgwrapper10 = document.querySelector(".img-wrapper10");
 const imgwrapper7 = document.querySelector(".img-wrapper7");
 const imgwrapper8 = document.querySelector(".img-wrapper8");
+const blackSection = document.querySelector('.black');  
+const greenSection = document.querySelector('.green');
+const fullimage = document.querySelector('.fullimage');
+const twentyfour = document.querySelector('.twentyfour');
 
 
 function changeText() {
@@ -89,7 +93,8 @@ if (whiteSection) {
 }
 
  imgwrapper9.style.borderColor = step % 2 === 0 ? "white" : "black";
- imgwrapper10.style.boxSh
+ imgwrapper10.style.boxShadow = step % 2 === 0 ? "0 0 10px rgba(0, 0, 0, 0.5)" : "0 0 10px rgba(255, 255, 255, 0.5)";
+ blackSection.style.borderColor = step % 2 === 0 ? "white" : "black";
 
  top8.style.color = step % 2 === 0 ? "white" : "black";
  top8.style.textShadow = step % 2 === 0 ? "0 0 10px rgba(0, 0, 0, 0.5)" : "0 0 10px rgba(255, 255, 255, 0.5)";
@@ -118,6 +123,9 @@ window.addEventListener("scroll", () => {
   intro.style.backgroundPosition = `center ${scrollY * 0.5}px`;
   gifcover.style.backgroundPosition = `center ${scrollY * 0.5}px`;
   gifcover2.style.backgroundPosition = `center ${scrollY * 0.5}px`;
+  greenSection.style.backgroundPosition = `center ${scrollY * 0.5}px`;
+  
+  //fullimage.style.backgroundPosition = `left ${scrollY * 0.5}px`;
 
   const cell = document.querySelector(".cell");
   if (cell) {
@@ -143,7 +151,7 @@ let inde2 = 0;
 async function changeFont() {
 
   while (true) {
-    body.style.backgroundImage = "url('testbackdrop2.png')";
+    body.style.backgroundImage = "url('testbackdrop2.jpg')";
 
     gifcover.style.opacity = "0%";
     body.style.color = "white";
@@ -157,11 +165,11 @@ async function changeFont() {
     topSection.style.textShadow = "none";
     top2.style.textShadow = "none";
     divbottom.style.textShadow = "none";
-    await sleep(4000);
+    await sleep(1000);
     body.style.backgroundImage = "none";
     gifcover.style.opacity = "0%";
     body.style.color = "black";
-    await sleep(4000);
+    await sleep(1000);
   }
 }
 
@@ -190,4 +198,19 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollwheel.appendChild(clone);
     });
   }
+});
+
+const modal = document.getElementById('imageModal');
+const modalImg = document.getElementById('modalImage');
+
+document.querySelectorAll('.img-wrapper15 img').forEach(img => {
+  img.addEventListener('click', () => {
+    modal.style.display = 'flex';   // show modal
+    modalImg.src = img.src;          // set image
+  });
+});
+
+// Close modal on click anywhere
+modal.addEventListener('click', () => {
+  modal.style.display = 'none';
 });

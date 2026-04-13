@@ -12,7 +12,7 @@
   -ms-user-select: none;
   /* Internet Explorer/Edge */
   user-select: none;
-  overscroll-behavior: none;
+ 
 
   font-size: clamp(12px, 2vw, 24px);
 

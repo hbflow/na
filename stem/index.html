@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEM - Nolan Ayodeji</title>
+    <link rel="icon" type="image/png" href="../na2.png">
+    <style>
+        @font-face {
+            font-family: 'Campton';
+            src: url('../CamptonBlack.otf') format('opentype');
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Modern1';
+            src: url('../Moderniz.otf') format('opentype');
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Modern Luxury';
+            src: url('../modern-luxury.regular.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Modern1', sans-serif;
+            background-image: url('../testbackdrop3.jpg');
+            background-size: cover;
+            background-position: left center;
+            background-attachment: fixed;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow-x: hidden;
+            font-size: clamp(12px, 2vw, 24px);
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 40px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .thank-you {
+            font-size: clamp(28px, 8vw, 64px);
+            color: white;
+            opacity: 0.85;
+            margin-bottom: 20px;
+            text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 20px;
+        }
+
+        .subtitle {
+            font-size: clamp(14px, 3vw, 22px);
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .cellgrid-image {
+            width: 90%;
+            max-width: 600px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 30px;
+            margin-bottom: 40px;
+        }
+
+        .cellgrid-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .updates {
+            font-size: clamp(12px, 2.5vw, 18px);
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.8;
+            max-width: 500px;
+        }
+
+        .highlight {
+            color: rgb(184, 140, 64);
+        }
+
+        .back-link {
+            margin-top: 50px;
+            font-size: clamp(11px, 2vw, 14px);
+        }
+
+        .back-link a {
+            color: rgb(161, 161, 229);
+            text-decoration: none;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="thank-you">Thank You for Watching</div>
+        <div class="subtitle">my STEM presentation on <span class="highlight">CellCode</span></div>
+
+        <div class="cellgrid-image">
+            <img src="../cellgrid2.jpg" alt="CellCode">
+        </div>
+
+        <div class="updates">
+            CellCode updates and interactive demos will be available here in the coming days. Stay tuned.
+        </div>
+
+        <div class="back-link">
+            <a href="/">nolanayodeji.com</a>
+        </div>
+    </div>
+</body>
+</html>
